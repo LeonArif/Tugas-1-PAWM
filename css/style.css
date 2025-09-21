@@ -1,0 +1,201 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 50;
+}
+
+body {
+    margin: 0;
+}
+
+/* Home */
+
+.nav {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 60px;
+    z-index: 10;
+}
+
+.fa-flask {
+    font-size: 20px;
+    color: black;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.fa-solid:hover {
+    transform: scale(1.2);
+}
+
+.nav-contents {
+    font-size: 15px;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.nav-contents::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* jarak dari text */
+    width: 0;
+    height: 2px;
+    background: black; /* warna underline */
+    transition: width 0.3s cubic-bezier(0.42,0,0.58,1);
+}
+
+.nav-contents:hover::after {
+    width: 100%;
+}
+
+.home {
+    position: relative;
+    background: linear-gradient(to bottom, #ffffff 0%, #e0e0e0 50%, #222222 100%);
+    padding: 10px 0 10px 0px;
+    height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    transition: background 0.7s cubic-bezier(0.42, 0, 0.58, 1);
+    overflow: hidden;
+    flex-direction: column;
+}
+
+.home::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: black;
+    opacity: var(--home-overlay-opacity, 0);
+    transition: opacity 0.1s linear;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.tulisan {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    flex-direction: column;
+}
+
+
+.title {
+    font-size: 150px;
+    font-weight: 100;
+    opacity: 0;
+    transform: translateY(-200px);
+    animation: geserKanan 0.5s cubic-bezier(0.42, 0, 0.58, 1) forwards;
+}
+
+/* .subtitle {
+    font-size: 25px;
+    margin-top: -50px;
+    opacity: 0;
+    transform: translateX(-100px);
+    animation: geserKanan 0.2s 0.5s cubic-bezier(0.42, 0, 0.58, 1) forwards;
+} */
+
+@keyframes geserKanan {
+    to {
+        opacity: 1;
+        transform: translateX(0) translateY(0);
+    }
+}
+
+/* Content */
+.content {
+    position: relative;
+    padding: 10px 0 10px 0px;
+    height: 100vh;
+    background-color: #222222;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.content::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: black;
+    opacity: var(--content-overlay-opacity, 0.1);
+    transition: opacity 0.1s linear;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.content-tulisan {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    opacity: 0;
+    transition: opacity 1s, transform 1s;
+    transform: translateY(-50px);
+    flex-direction: column;
+    color: white;
+    font-size: 30px;
+    z-index: 2;
+}
+
+.content-containers {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px;
+    z-index: 2;
+    
+}
+
+.berkom, .physics, .math {
+    height: 400px;
+    width: 400px;
+    color: white;
+    background: #222223;
+    border-radius: 10px;
+    border-width: 10px;
+    border-color: white;
+    opacity: 0;
+    transform: translateY(-50px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+    transform-origin: top center;
+}
+
+.berkom.muncul, .physics.muncul, .math.muncul,.content-tulisan.muncul {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fa-computer, .fa-atom, .fa-calculator {
+    font-size: 150px;
+    color: white;
+    object-fit: cover;
+    margin-bottom: 20px;
+    transition: all 0.3s
+}
+
+.berkom.muncul:hover, .physics.muncul:hover, .math.muncul:hover {
+    box-shadow: 0 0 30px rgba(0,0,0,0.25);
+    transform: translateY(0) scale(1.1);
+    background: #ffffff;
+    cursor: pointer;
+    color: black;
+}
+
+.berkom.muncul:hover .fa-computer,
+.physics.muncul:hover .fa-atom,
+.math.muncul:hover .fa-calculator {
+    color: black;
+    transform: scale(0.91);
+}
