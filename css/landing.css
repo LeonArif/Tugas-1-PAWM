@@ -31,15 +31,44 @@ body, html {
     transition: all 0.3s;
 }
 
-.fa-solid:hover {
+.fa-flask:hover{
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.9));
     transform: scale(1.2);
 }
 
 .nav-contents {
-    font-size: 15px;
+    font-size: 17px;
     position: relative;
     display: inline-block;
     cursor: pointer;
+}
+
+.nav-tulisan{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+}
+
+.sign-in {
+    font-size: 20px;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    height: 30px;
+    width: 120px;
+    border-radius: 20px;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding-bottom: 2px;
+    transition: all 0.4s;
+}
+
+.sign-in:hover {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.4));
 }
 
 .nav-contents::after {
@@ -59,13 +88,17 @@ body, html {
 
 .home {
     position: relative;
-    background: linear-gradient(to bottom, #ffffff 0%, #e0e0e0 70%, #222222 100%);
+    background-image: url(../image/wave-haikei.svg);
+    background-size: cover;     
+    /* background-repeat: no-repeat;
+    background-position: center; */
     padding: 10px 0 10px 0px;
     box-sizing: border-box;
     display: flex;
     transition: background 0.7s cubic-bezier(0.42, 0, 0.58, 1);
     overflow: hidden;
     flex-direction: column;
+    height: 130vh;
 }
 
 .home::after {
@@ -86,6 +119,7 @@ body, html {
     align-items: center;
     font-family: 'Poppins', sans-serif;
     flex-direction: column;
+    margin-bottom: 275px;
 }
 
 
@@ -95,6 +129,7 @@ body, html {
     opacity: 0;
     transform: translateY(-200px);
     animation: geserKanan 0.5s cubic-bezier(0.42, 0, 0.58, 1) forwards;
+    
 }
 
 /* .subtitle {
@@ -116,7 +151,7 @@ body, html {
 .content {
     position: relative;
     padding: 10px 0 10px 0px;
-    background-color: #222222;
+    background-color: black;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
@@ -157,17 +192,17 @@ body, html {
     z-index: 2;
     
 }
-.home, .content {
-    height: 100dvh;
+/* .home, .content {
+    height: 100vh;
     box-sizing: border-box;
     overflow: hidden;
-}
+} */
 
 .berkom, .physics, .math {
     height: 400px;
     width: 400px;
     color: white;
-    background: #222223;
+    background: #222222;
     border-radius: 10px;
     border-width: 10px;
     border-color: white;
@@ -192,6 +227,13 @@ body, html {
     object-fit: cover;
     margin-bottom: 20px;
     transition: all 0.3s
+    
+}
+
+.fa-computer:hover, .fa-atom:hover, .fa-calculator:hover {
+    filter: drop-shadow(0 0 10px rgba(0,0,0,0.3));
+    color: black;
+    transform: scale(1.1);
 }
 
 .berkom.muncul:hover, .physics.muncul:hover, .math.muncul:hover {
@@ -206,5 +248,4 @@ body, html {
 .physics.muncul:hover .fa-atom,
 .math.muncul:hover .fa-calculator {
     color: black;
-    transform: scale(0.91);
 }
