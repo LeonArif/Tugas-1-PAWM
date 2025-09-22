@@ -38,16 +38,26 @@ document.addEventListener('scroll', function() {
         contentTulisan.classList.remove('muncul');
     }
 
-    const cards = document.querySelectorAll('.berkom, .physics, .math');
-    cards.forEach(card => {
-        const rect = card.getBoundingClientRect();
-        if (rect.top < windowHeight - rect.height / 2 && rect.bottom > 0) {
-            card.classList.add('muncul');
+    const language = document.querySelectorAll('.language');
+    language.forEach(language => {
+        const languageRect = language.getBoundingClientRect();
+        if (languageRect.top >= 0 && languageRect.bottom <= windowHeight) {
+            language.classList.add('muncul');
         } else {
-            card.classList.remove('muncul');
+            language.classList.remove('muncul');
         }
     });
 
+    // const carousel = document.querySelector('.carousel');
+    // if (carousel) {
+    //     const carouselRect = carousel.getBoundingClientRect();
+    //     if (carouselRect.top < windowHeight - carouselRect.height / 2 && carouselRect.bottom > 0) {
+    //         carousel.classList.add('muncul');
+    //     } else {
+    //         carousel.classList.remove('muncul');
+    //     }
+    // }
+    
     const title = document.querySelector('.title');
     if (title) {
         const titleRect = title.getBoundingClientRect();
@@ -72,17 +82,5 @@ document.addEventListener('scroll', function() {
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("go-content").addEventListener("click", function() {
         document.getElementById("content").scrollIntoView({ behavior: "smooth" });
-    });
-});
-
-document.querySelectorAll('.berkom, .physics, .math').forEach(card => {
-    card.addEventListener('click', function() {
-        if (card.classList.contains('berkom')) {
-            window.open('berkom.html', '_blank');
-        } else if (card.classList.contains('physics')) {
-            window.open('physics.html', '_blank');
-        } else if (card.classList.contains('math')) {
-            window.open('math.html', '_blank');
-        }
     });
 });
