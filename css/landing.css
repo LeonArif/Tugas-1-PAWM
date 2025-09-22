@@ -199,13 +199,13 @@ body, html {
 } */
 
 .berkom, .physics, .math {
-    height: 400px;
-    width: 400px;
+    height: 380px;
+    width: 380px;
     color: white;
     background: #222222;
     border-radius: 10px;
     border-width: 10px;
-    border-color: white;
+    border-color: rgb(255, 0, 0);
     opacity: 0;
     transform: translateY(-50px);
     display: flex;
