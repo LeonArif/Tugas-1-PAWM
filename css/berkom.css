@@ -1,0 +1,126 @@
+body {
+  background-color: #202833;
+  color: #d0e6a5;
+  font-family: 'Fira Mono', 'Courier New', Courier, monospace;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  background: #232931;
+  border-radius: 16px;
+  box-shadow: 0 0 16px #14171b;
+  padding: 32px;
+}
+h2 {
+  color: #43e97b;
+  margin-bottom: 28px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.challenge-block {
+  margin-bottom: 40px;
+  padding: 24px 18px 18px 18px;
+  background: #2a2f3c;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #191a21;
+}
+.challenge-title {
+  color: #43e97b;
+  font-weight: bold;
+  font-size: 1.18em;
+  margin-bottom: 8px;
+}
+.challenge-desc {
+  margin-bottom: 16px;
+}
+.challenge-difficulty {
+  display: inline-block;
+  padding: 2px 14px;
+  border-radius: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 1em;
+  letter-spacing: 1px;
+}
+.challenge-difficulty.easy {
+  background: #43e97b;
+  color: #232931;
+  border: 2px solid #43e97b;
+}
+
+.challenge-difficulty.medium {
+  background: #ffe066;
+  color: #232931;
+  border: 2px solid #ffe066;
+}
+
+.challenge-difficulty.hard {
+  background: #ff4f4f;
+  color: #fff;
+  border: 2px solid #ff4f4f;
+}
+.label {
+  color: #43e97b;
+  font-weight: bold;
+  margin-top: 14px;
+  margin-bottom: 6px;
+  display: block;
+  font-size: 1.1em;
+}
+.CodeMirror {
+  border-radius: 8px;
+  border: 1.5px solid #43e97b;
+  font-size: 16px;
+  height: 140px;
+  margin-bottom: 16px;
+  background: #191a21;
+  color: #f8f8f2;
+}
+button {
+  background: linear-gradient(90deg,#43e97b 0,#38f9d7 100%);
+  color: #232931;
+  font-weight: bold;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-size: 16px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #101215;
+  transition: filter .15s;
+}
+button:hover {
+  filter: brightness(0.9);
+}
+.outputbox {
+  padding: 14px;
+  min-height: 50px;
+  background: #15171c;
+  border-radius: 8px;
+  border: 1.5px solid #43e97b;
+  color: #f8f8f2;
+  margin-top: 10px;
+  font-size: 16px;
+  white-space: pre-wrap;
+}
+.testcase {
+  background: #232931;
+  color: #e9ffb6;
+  padding: 7px 10px;
+  margin-bottom: 7px;
+  border-radius: 5px;
+  font-family: 'Fira Mono', monospace;
+}
+.tc-success {
+  color: #43e97b;
+  font-weight: bold;
+}
+.tc-fail {
+  color: #ff4f4f;
+  font-weight: bold;
+}
+@media (max-width: 900px) {
+  .container {max-width: 96vw; padding: 8vw;}
+}
