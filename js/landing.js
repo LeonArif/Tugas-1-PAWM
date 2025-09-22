@@ -5,8 +5,8 @@ document.addEventListener('scroll', function() {
 
     let scrolled = Math.max(0, -homeRect.top);
     let totalHeight = home.offsetHeight;
-    let progress = Math.min(1.1, scrolled / totalHeight);
-    let opacity = progress * 1.1;
+    let progress = Math.min(1.5, scrolled / totalHeight);
+    let opacity = progress * 1.5;
 
     home.style.setProperty('--home-overlay-opacity', opacity);
 });
@@ -21,7 +21,7 @@ document.addEventListener('scroll', function() {
 
     visibleHeight = Math.max(0, Math.min(visibleHeight, totalHeight));
     let progress = visibleHeight / totalHeight;
-    let opacity = Math.min(1, progress * 1.1);
+    let opacity = Math.min(1.2, progress * 1.5);
 
     content.style.setProperty('--content-overlay-opacity', opacity);
 });
