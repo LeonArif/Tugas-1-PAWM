@@ -94,3 +94,37 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("content").scrollIntoView({ behavior: "smooth" });
     });
 });
+
+const slides = document.querySelectorAll('.carousel-box .language');
+const nextBtn = document.querySelector('.carousel-btn.next');
+const prevBtn = document.querySelector('.carousel-btn.prev');
+let current = 0;
+const total = slides.length;
+
+function updateClasses() {
+  slides.forEach((slide, i) => {
+    slide.classList.remove('left', 'active', 'right', 'hidden');
+    const leftIdx = (current - 1 + total) % total;
+    const rightIdx = (current + 1) % total;
+    if (i === leftIdx) {
+      slide.classList.add('left');
+    } else if (i === current) {
+      slide.classList.add('active');
+    } else if (i === rightIdx) {
+      slide.classList.add('right');
+    } else {
+      slide.classList.add('hidden');
+    }
+  });
+}
+
+nextBtn.onclick = function() {
+  current = (current + 1) % total;
+  updateClasses();
+};
+prevBtn.onclick = function() {
+  current = (current - 1 + total) % total;
+  updateClasses();
+};
+
+updateClasses();
