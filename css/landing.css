@@ -32,10 +32,12 @@ body, html {
 }
 
 .logo {
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
     cursor: pointer;
     transition: all 0.3s;
+    border-radius: 100%;
+    background-color: black;
 }
 
 .logo:hover{
@@ -154,15 +156,16 @@ body, html {
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-    animation: geserKanan 0.2s 0.5s cubic-bezier(0.42, 0, 0.58, 1) forwards, gradasi 5s linear infinite;
+    animation: geserKanan 0.5s cubic-bezier(0.42, 0, 0.58, 1) forwards, gradasi 5s linear infinite;
 }
+
 
 .subtitle {
     font-size: 25px;
     margin-top: -80px;
     opacity: 0;
     transform: translateX(-100px);
-    animation: geserKanan 0.2s 0.5s cubic-bezier(0.42, 0, 0.58, 1) forwards;
+    animation: geserKanan 0.5s cubic-bezier(0.42, 0, 0.58, 1) forwards;
 }
 
 @keyframes geserKanan {
@@ -222,6 +225,7 @@ body, html {
     align-items: center;
     padding: 100px;
     z-index: 2;
+    flex-direction: column;
     
 }
 
@@ -252,11 +256,6 @@ body, html {
     z-index: 3; 
 } 
 
-.language.muncul,.content-tulisan.muncul {
-    opacity: 1;
-    transform: translateY(0);
-}
-
 .fa-python {
     font-size: 150px;
     color: white;
@@ -285,3 +284,30 @@ body, html {
     color: black;
 } 
 
+.geser {
+    margin-top: 70px;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.3s;
+}
+
+.carousel-btn {
+    background: none;
+    color: white;
+    font-size: 30px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+}
+
+.carousel-btn:hover {
+    transform: scale(1.5);
+}
+
+.language.muncul,.content-tulisan.muncul,.geser.muncul {
+    opacity: 1;
+    transform: translateY(0);
+}

@@ -67,6 +67,16 @@ document.addEventListener('scroll', function() {
             title.classList.remove('muncul');
         }
     }
+    
+    const geser = document.querySelector('.geser');
+    if (geser) {
+        const geserRect = geser.getBoundingClientRect();
+        if (geserRect.top < windowHeight - geserRect.height / 2 && geserRect.bottom > 0) {
+            geser.classList.add('muncul');
+        } else {
+            geser.classList.remove('muncul');
+        }
+    }
 
     const subtitle = document.querySelector('.subtitle');
     if (subtitle) {
