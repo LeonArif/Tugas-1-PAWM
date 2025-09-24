@@ -38,25 +38,25 @@ document.addEventListener('scroll', function() {
         contentTulisan.classList.remove('muncul');
     }
 
-    const language = document.querySelectorAll('.language');
-    language.forEach(language => {
-        const languageRect = language.getBoundingClientRect();
-        if (languageRect.top >= 0 && languageRect.bottom <= windowHeight) {
-            language.classList.add('muncul');
-        } else {
-            language.classList.remove('muncul');
-        }
-    });
-
-    // const carousel = document.querySelector('.carousel');
-    // if (carousel) {
-    //     const carouselRect = carousel.getBoundingClientRect();
-    //     if (carouselRect.top < windowHeight - carouselRect.height / 2 && carouselRect.bottom > 0) {
-    //         carousel.classList.add('muncul');
+    // const language = document.querySelectorAll('.language');
+    // language.forEach(language => {
+    //     const languageRect = language.getBoundingClientRect();
+    //     if (languageRect.top >= 0 && languageRect.bottom <= windowHeight) {
+    //         language.classList.add('muncul');
     //     } else {
-    //         carousel.classList.remove('muncul');
+    //         language.classList.remove('muncul');
     //     }
-    // }
+    // });
+
+    const carousel = document.querySelector('.carousel-box');
+    if (carousel) {
+        const carouselRect = carousel.getBoundingClientRect();
+        if (carouselRect.top < windowHeight - carouselRect.height / 2 && carouselRect.bottom > 0) {
+            carousel.classList.add('muncul');
+        } else {
+            carousel.classList.remove('muncul');
+        }
+    }
     
     const title = document.querySelector('.title');
     if (title) {
@@ -71,7 +71,7 @@ document.addEventListener('scroll', function() {
     const geser = document.querySelector('.geser');
     if (geser) {
         const geserRect = geser.getBoundingClientRect();
-        if (geserRect.top < windowHeight - geserRect.height / 2 && geserRect.bottom > 0) {
+        if (geserRect.top < windowHeight - geserRect.height / 2 + 100 && geserRect.bottom > 0) {
             geser.classList.add('muncul');
         } else {
             geser.classList.remove('muncul');
@@ -91,25 +91,33 @@ document.addEventListener('scroll', function() {
 
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("go-content").addEventListener("click", function() {
-        document.getElementById("content").scrollIntoView({ behavior: "smooth" });
+        const content = document.getElementById("content");
+        const y = content.getBoundingClientRect().top + window.pageYOffset;
+        const extraOffset = 80; 
+        window.scrollTo({ top: y + extraOffset, behavior: "smooth" });
     });
 });
 
 const slides = document.querySelectorAll('.carousel-box .language');
 const nextBtn = document.querySelector('.carousel-btn.next');
 const prevBtn = document.querySelector('.carousel-btn.prev');
+const carouselBox = document.querySelector('.carousel-box');
 let current = 0;
 const total = slides.length;
+const ANIMATION_DURATION = 400; // ms, sesuaikan dgn transition CSS
 
+let isAnimating = false;
+
+// Update slide posisi
 function updateClasses() {
   slides.forEach((slide, i) => {
-    slide.classList.remove('left', 'active', 'right', 'hidden');
+    slide.classList.remove('left', 'active', 'right', 'hidden', 'muncul');
     const leftIdx = (current - 1 + total) % total;
     const rightIdx = (current + 1) % total;
     if (i === leftIdx) {
       slide.classList.add('left');
     } else if (i === current) {
-      slide.classList.add('active');
+      slide.classList.add('active', 'muncul');
     } else if (i === rightIdx) {
       slide.classList.add('right');
     } else {
@@ -118,13 +126,67 @@ function updateClasses() {
   });
 }
 
+// Disable semua interaksi saat animasi
+function setAnimating(state) {
+  isAnimating = state;
+  if (state) {
+    carouselBox.classList.add('animating');
+    nextBtn.disabled = true;
+    prevBtn.disabled = true;
+  } else {
+    carouselBox.classList.remove('animating');
+    nextBtn.disabled = false;
+    prevBtn.disabled = false;
+  }
+}
+
+// Next button
 nextBtn.onclick = function() {
+  if (isAnimating) return;
+  setAnimating(true);
   current = (current + 1) % total;
   updateClasses();
-};
-prevBtn.onclick = function() {
-  current = (current - 1 + total) % total;
-  updateClasses();
+  setTimeout(() => setAnimating(false), ANIMATION_DURATION);
 };
 
+// Prev button
+prevBtn.onclick = function() {
+  if (isAnimating) return;
+  setAnimating(true);
+  current = (current - 1 + total) % total;
+  updateClasses();
+  setTimeout(() => setAnimating(false), ANIMATION_DURATION);
+};
+
+// (Opsional) Cegah hover pada slide selama animasi (dari CSS class)
+carouselBox.addEventListener('mouseenter', (e) => {
+  if (isAnimating) {
+    e.stopPropagation();
+    e.preventDefault();
+  }
+}, true);
+
+// Inisialisasi
 updateClasses();
+
+document.querySelectorAll('.language').forEach(function(el) {
+    el.style.cursor = el.classList.contains('active') ? "pointer" : "default";
+    el.addEventListener('click', function() {
+        if (el.classList.contains('active')) {
+            const url = el.getAttribute('data-link');
+            if (url) window.open(url, '_blank');
+        }
+    });
+});
+
+// Optional: Update cursor dynamically if class changes
+const observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+        if (mutation.target.classList.contains('language')) {
+            mutation.target.style.cursor = mutation.target.classList.contains('active') ? "pointer" : "default";
+        }
+    });
+});
+document.querySelectorAll('.language').forEach(function(el) {
+    observer.observe(el, { attributes: true });
+});
