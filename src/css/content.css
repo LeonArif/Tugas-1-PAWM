@@ -118,14 +118,16 @@
     transition: left 0.3s;
     color: white;
     transition: all 0.3s;
+    overflow-y: auto;  
 }
 
 .sidebar h3 {
     display: flex;
     padding-left: 14px;
+    font-weight: 500;
 }
 
-#first {
+#sidebar-if-else {
    border-top: solid white 1px; 
 }
 
@@ -161,5 +163,5 @@
 }
 
 .content {
-    margin-left: 220px;
+    margin-left: 250px;
 }
