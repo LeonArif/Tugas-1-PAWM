@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
 
 * {
-    font-family: "Mulish", sans-serif;
-    font-weight: 300;
+    font-weight: 400;
     box-sizing: border-box;
 }
 
@@ -23,18 +22,19 @@
     position: fixed;
     top: 0;
     left: 0;
-    right: 0; /* agar full lebar */
+    right: 0;
     height: 60px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 60px;
-    z-index: 1000; /* pastikan nav di atas elemen lain */
-    background: white; /* tambahkan background supaya tidak transparan */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.03); /* opsional, buat efek floating */
+    z-index: 1000;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
     border-bottom: 1px solid black;
     padding-top: 20px;
     padding-bottom: 20px;
+    font-family: "Mulish", sans-serif;
 }
 
 .logo {
@@ -69,7 +69,7 @@
     flex: 1;
     text-align: center;
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 700;
 }
 
 .sign-in {
@@ -120,20 +120,31 @@
     transition: left 0.3s;
     color: white;
     transition: all 0.3s;
-    overflow-y: auto;  
+    overflow-y: auto;
+    font-family: "Mulish", sans-serif;
 }
 
-.sidebar h3 {
+.sidebar a {
     display: flex;
     padding-left: 14px;
     font-weight: 500;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s;
+}
+
+.sidebar a:hover {
+    filter:
+    drop-shadow(1px 1px 8px rgba(255, 126, 185, 0.70))
+    drop-shadow(-1px -1px 8px rgba(123, 250, 255, 0.70))
+    drop-shadow(0 0 10px rgba(255, 255, 255, 0.70)); 
 }
 
 #sidebar-if-else {
    border-top: solid white 1px; 
 }
 
-.sidebar p {
+.python-tutorial {
     position: relative;
     display: flex;
     align-items: center;
@@ -141,12 +152,15 @@
     margin: 0;
     font-size: 16px;
     overflow: hidden;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
 }
 
-.sidebar p::after {
+.python-tutorial::after {
     content: "";
     position: absolute;
-    left: 50%;
+    left: 0;
     bottom: 0;
     width: 0;
     height: 1px;
@@ -155,13 +169,25 @@
     transform: translateX(-50%);
 }
 
-.sidebar p:hover::after {
-    width: 100%;
-    cursor: pointer;
+.python-tutorial::before {
+    content: "";
+    position: absolute;
+    left: 100%;
+    top: 0;
+    width: 0;
+    height: 1px;
+    background: white;
+    transition: width 0.3s cubic-bezier(.5,0,.5,1);
+    transform: translateX(-50%);
 }
 
-.sidebar p:hover{
-    cursor: pointer;
+#sidebar-if-else::before {
+    display: none !important;
+}
+
+.python-tutorial:hover::after,
+.python-tutorial:hover::before {
+    width: 200%;
 }
 
 .content {
@@ -171,4 +197,80 @@
 
 #if-else, #loop {
     scroll-margin-top: 80px;
+}
+
+.code-runner {
+    background: #dfdfdf;
+    border-radius: 10px;
+    padding: 1px 16px 16px 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    max-width:80%;
+}
+
+.code-runner h3 {
+    display: block;
+    font-weight: 500;
+    color: #000000;
+}
+
+.code-runner button {
+    background: #000000;
+    color: white;
+    border: none;
+    width: auto;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-bottom: 14px;
+    margin-top: 10px;
+    transition: all 0.3s;
+}
+
+.code-runner button:hover {
+    background: #3e3e3e;
+}
+
+.code-runner pre {
+    background: #ffffff;
+    color: #000000;
+    padding: 10px;
+    min-height: 40px;
+    font-family: 'Consolas', 'Courier New', monospace;
+    margin-top: 0;
+    white-space: pre-wrap;
+}
+
+.tutorial {
+    font-family: "Mulish", sans-serif;
+}
+
+.tutorial h1{
+    font-weight: 700;
+    margin-bottom: -5px;
+}
+
+.tutorial h2{
+    font-weight: 500;
+}
+
+.tutorial p{
+    width: 80%;
+}
+
+.next-button {
+    background: #000000;
+    color: white;
+    border: none;
+    width: auto;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-bottom: 14px;
+    transition: all 0.3s;
+}
+
+.next-button:hover {
+    background: #3e3e3e;
 }

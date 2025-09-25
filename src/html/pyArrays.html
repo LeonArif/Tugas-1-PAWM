@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/content.css">
     <link rel="icon" href="../../assets/codeX-removebg-preview.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/content.css">
     <title>Python</title>
 
 </head>
@@ -17,26 +17,24 @@
     </nav>
     <div class="garis"></div>
     <div class="sidebar">
-        <h3>Python Basic Tutorial</h3>
-        <p id="sidebar-if-else">Python if-else</p>
-        <p id="sidebar-loop">Python loop</p>
+        <h3><a href="pyHome.html">Python Tutorial</a></h3>
+        <a class="python-tutorial" href="pyIfElse.html" id="sidebar-if-else">Python If-Else</a>
+        <a class="python-tutorial" href="pyLoops.html">Python Loops</a>
+        <a class="python-tutorial"href="pyArrays.html">Python Arrays</a>
+        <a class="python-tutorial" href="pyFunctions.html">Python Functions</a>
+        <a class="python-tutorial" href="pyExcercise.html">Python Excercise</a>
     </div>
 
-    <section class="content" id="tutorial-content">
-        <!-- <div id="if-else">
-            <h1 style="font-weight: 500;">Python if-else</h1>
-            <h2 style="font-weight: 300;">Basic structure of if-else in python</h2>
-            <p>bla bla</p>
-        </div>
-        <div id="loop">
-            <h1 style="font-weight: 500;">Python loop</h1>
-            <h2 style="font-weight: 300;">Basic structure of if-else in python</h2>
-            <p>bla bla</p>
-        </div> -->
-    </section>
+    <section class="content" id="tutorial-content"></section>
 </body>
-<script src="../scripts/content.js"></script>
-<script src="../coderunner/pythonRunner.js"></script>
+<!-- Monaco loader -->
+<script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.44.0/min/vs/loader.js"></script>
+
+<!-- Skulpt (Python runner) -->
 <script src="https://cdn.jsdelivr.net/npm/skulpt@latest/dist/skulpt.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/skulpt@latest/dist/skulpt-stdlib.js"></script>
+
+<!-- Code runner & content logic -->
+<script src="../coderunner/pythonRunner.js"></script>
+<script src="../scripts/pyArray.js"></script>
 </html>
