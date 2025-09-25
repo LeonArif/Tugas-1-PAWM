@@ -169,10 +169,12 @@
     transform: translateX(-50%);
 
 }
+
 .python-tutorial::after {
     left: 0;
     bottom: 0;
 }
+
 .python-tutorial::before {
     left: 100%;
     top: 0;

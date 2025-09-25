@@ -23,6 +23,19 @@ function setupMonacoEditors(editors) {
     });
 }
 
+function runPythonMonaco(monacoInstance, outputId) {
+    document.getElementById(outputId).textContent = "";
+    const code = monacoInstance.getValue();
+    Sk.configure({
+        output: function(text) {
+            document.getElementById(outputId).textContent += text;
+        },
+        read: builtinRead
+    });
+    Sk.misceval.asyncToPromise(function() {
+        return Sk.importMainWithBody("<stdin>", false, code, true);
+    });
+}
 
 function codeRunner(id, defaultCode = 'print("Hello World")', label = "Try Python code:") {
     return `
