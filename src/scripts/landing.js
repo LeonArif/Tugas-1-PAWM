@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("go-content").addEventListener("click", function() {
         const content = document.getElementById("content");
         const y = content.getBoundingClientRect().top + window.pageYOffset;
-        const extraOffset = 80; 
+        const extraOffset = 70; 
         window.scrollTo({ top: y + extraOffset, behavior: "smooth" });
     });
 });
