@@ -1,15 +1,15 @@
-# Python Interactive Tutorial Web
+# Interactive Tutorial Web
 
-Aplikasi web ini adalah platform pembelajaran Python interaktif yang terinspirasi dari W3Schools, namun dengan fitur latihan kode (exercise) yang dapat dijalankan langsung di browser.
+Aplikasi web ini adalah platform pembelajaran bahasa pemrograman interaktif dengan fitur latihan kode (exercise) yang dapat dijalankan langsung di browser.
 
 ## Fitur Utama
 
 - **Tutorial Terstruktur:**  
-  Materi pembelajaran Python mulai dari dasar hingga topik lanjutan.  
+  Materi pembelajaran bahasa pemrograman mulai dari dasar hingga topik lanjutan.  
   Setiap materi dilengkapi dengan penjelasan, contoh kode, dan penjelasan visual.
 
-- **Editor Python Interaktif:**  
-  Pengguna bisa mencoba kode Python langsung di browser menggunakan Monaco Editor dan Skulpt, tanpa perlu install apapun.
+- **Editor Interaktif:**  
+  Pengguna bisa mencoba kode langsung di browser menggunakan Monaco Editor dan Skulpt, tanpa perlu install apapun.
 
 - **Exercise Otomatis:**  
   Di akhir setiap materi/tutorial, terdapat latihan soal yang dapat langsung diuji.  
@@ -33,5 +33,6 @@ Aplikasi web ini adalah platform pembelajaran Python interaktif yang terinspiras
 
 1. Clone repository ini
 2. Buka file `index.html` di browser (tidak perlu server, bisa langsung double-click)
+
 
 
