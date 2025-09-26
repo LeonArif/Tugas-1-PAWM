@@ -90,14 +90,15 @@ document.addEventListener('scroll', function() {
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("go-content").addEventListener("click", function() {
-        const content = document.getElementById("content");
-        const y = content.getBoundingClientRect().top + window.pageYOffset;
-        const extraOffset = 70; 
-        window.scrollTo({ top: y + extraOffset, behavior: "smooth" });
+    document.querySelectorAll(".go-content").forEach(function(el) {
+        el.addEventListener("click", function() {
+            const content = document.getElementById("content");
+            const y = content.getBoundingClientRect().top + window.pageYOffset;
+            const extraOffset = 70; 
+            window.scrollTo({ top: y + extraOffset, behavior: "smooth" });
+        });
     });
 });
-
 const slides = document.querySelectorAll('.carousel-box .language');
 const nextBtn = document.querySelector('.carousel-btn.next');
 const prevBtn = document.querySelector('.carousel-btn.prev');

@@ -28,12 +28,24 @@ body, html {
 /* Home */
 
 .nav {
-    height: 60px;
+    position: relative;
+    height: 65px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 60px;
+    padding: 20px 60px;
     z-index: 10;
+}
+
+.nav::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 0.5px;
+    background: linear-gradient(to right, white, black, black, black, white);
+    z-index: 11;
 }
 
 .nav-kiri{
@@ -42,6 +54,7 @@ body, html {
     display: flex;
     align-items: center;
     justify-content: left;
+    
 }
 
 .logo {
@@ -113,16 +126,9 @@ body, html {
     width: 100%;
 }
 
-.garis {
-    background: linear-gradient(to right, white, black , black, black, white);
-    height: 1px;
-    width: 100%;
-    margin-top: 10px;
-}
-
 .home {
     position: relative;
-    background-image: url(../../assets/wave-haikei.svg);
+    background-image: url(../assets/wave-haikei.svg);
     background-size: cover;     
     background-repeat: no-repeat;
     background-position: center;
@@ -185,6 +191,27 @@ body, html {
     animation: geserKanan 0.2s 0.5s cubic-bezier(0.42, 0, 0.58, 1) forwards;
 }
 
+.main-button {
+    background-color: black;
+    width: 200px;
+    height: auto;
+    border-radius: 50px;
+    font-size: 20px;
+    color: white;
+    padding: 20px;
+    transition: all 0.3s;
+}
+
+.main-button:hover{
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    filter: 
+    drop-shadow(5px 5px 8px rgba(255, 126, 185, 0.70))
+    drop-shadow(-5px -5px 8px rgba(123, 250, 255, 0.70))
+    drop-shadow(0 0 10px rgba(255, 255, 255, 0.70)); 
+}
+
 @keyframes geserKanan {
     to {
         opacity: 1;
@@ -197,6 +224,7 @@ body, html {
         background-position: 200%;
     }
 }
+
 /* Content */
 .content {
     position: relative;
