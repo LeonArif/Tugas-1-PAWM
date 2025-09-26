@@ -202,7 +202,10 @@ body, html {
     display: flex;
     align-items: center;
     gap: 8px;
-    margin-top: 40px;
+    margin-top: 25px;
+    opacity: 0;
+    transform: translateX(-100px);
+    animation: geserKanan 0.3s 0.5s cubic-bezier(0.42, 0, 0.58, 1) forwards;
 }
 
 #search-input {
@@ -234,8 +237,8 @@ body, html {
 .subtitle {
     font-size: 20px;
     opacity: 0;
-    transform: translateX(-100px);
-    animation: geserKanan 0.2s 0.5s cubic-bezier(0.42, 0, 0.58, 1) forwards;
+    transform: translateX(100px);
+    animation: geserKanan 0.3s 0.5s cubic-bezier(0.42, 0, 0.58, 1) forwards;
     transition: all 0.3s;
 }
 
