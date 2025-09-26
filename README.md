@@ -1,4 +1,4 @@
-# Interactive Tutorial Web
+# CodeX: Interactive Tutorial Web
 
 Aplikasi web ini adalah platform pembelajaran bahasa pemrograman interaktif dengan fitur latihan kode (exercise) yang dapat dijalankan langsung di browser.
 
@@ -33,6 +33,7 @@ Aplikasi web ini adalah platform pembelajaran bahasa pemrograman interaktif deng
 
 1. Clone repository ini
 2. Buka file `index.html` di browser (tidak perlu server, bisa langsung double-click)
+
 
 
 
