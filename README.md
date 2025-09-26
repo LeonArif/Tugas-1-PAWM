@@ -33,30 +33,5 @@ Aplikasi web ini adalah platform pembelajaran Python interaktif yang terinspiras
 
 1. Clone repository ini
 2. Buka file `index.html` di browser (tidak perlu server, bisa langsung double-click)
-3. Mulai belajar dan coba latihan!
 
-## Struktur Folder
 
-```
-- index.html
-- assets/
-    - css/
-    - js/
-    - images/
-```
-
-## Contoh Screenshot
-
-![Contoh Tampilan Exercise](screenshot-exercise.png)
-
-## Kontribusi
-
-Jika ingin menambah materi/tutorial baru atau latihan soal, silakan fork repo ini dan buat pull request.
-
-## Lisensi
-
-MIT License
-
----
-
-**Selamat belajar Python!**
