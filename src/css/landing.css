@@ -66,7 +66,11 @@ body, html {
 }
 
 .logo:hover{
-    filter: drop-shadow(0 0 2px rgba(0,0,0,1));
+    transform: scale(1.1);
+    filter: 
+    drop-shadow(2px 2px 1px rgba(255, 126, 185, 0.70))
+    drop-shadow(-2px -2px 1px rgba(123, 250, 255, 0.70))
+    drop-shadow(0 0 10px rgba(255, 255, 255, 0.70));
 }
 
 .nav-contents {
@@ -107,8 +111,11 @@ body, html {
 }
 
 .sign-in:hover {
-    transform: scale(1.2);
-    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.4));
+    transform: scale(1.1);
+    filter: 
+    drop-shadow(2px 2px 5px rgba(255, 126, 185, 0.70))
+    drop-shadow(-2px -2px 5px rgba(123, 250, 255, 0.70))
+    drop-shadow(0 0 10px rgba(255, 255, 255, 0.70));
 }
 
 .nav-contents::after {
@@ -124,6 +131,13 @@ body, html {
 
 .nav-contents:hover::after {
     width: 100%;
+}
+
+.nav-contents:hover{
+    filter: 
+    drop-shadow(2px 2px 4px rgba(255, 126, 185, 0.70))
+    drop-shadow(-2px -2px 4px rgba(123, 250, 255, 0.70))
+    drop-shadow(0 0 10px rgba(255, 255, 255, 0.70));
 }
 
 .home {
@@ -167,6 +181,7 @@ body, html {
     font-size: 150px;
     font-weight: 100;
     opacity: 0;
+    margin-bottom: -20px;
     transform: translateY(-200px);
     background: linear-gradient(
         #ffe29f,
@@ -183,32 +198,53 @@ body, html {
     animation: geserKanan 0.5s cubic-bezier(0.77, 0, 0.175, 1) forwards, gradasi 3s ease-in-out infinite alternate;
 }
 
-.subtitle {
-    font-size: 25px;
-    margin-top: -80px;
-    opacity: 0;
-    transform: translateX(-100px);
-    animation: geserKanan 0.2s 0.5s cubic-bezier(0.42, 0, 0.58, 1) forwards;
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 40px;
 }
 
-.main-button {
-    background-color: black;
-    width: 200px;
-    height: auto;
-    border-radius: 50px;
-    font-size: 20px;
+#search-input {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 16px;
+    width: 250px;
+}
+
+#search-btn {
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: none;
+    background: black;
     color: white;
-    padding: 20px;
+    cursor: pointer;
     transition: all 0.3s;
 }
 
-.main-button:hover{
-    cursor: pointer;
-    background-color: white;
-    color: black;
+#search-btn:hover {
+    transform: scale(1.1);
     filter: 
-    drop-shadow(5px 5px 8px rgba(255, 126, 185, 0.70))
-    drop-shadow(-5px -5px 8px rgba(123, 250, 255, 0.70))
+    drop-shadow(2px 2px 5px rgba(255, 126, 185, 0.70))
+    drop-shadow(-2px -2px 5px rgba(123, 250, 255, 0.70))
+    drop-shadow(0 0 10px rgba(255, 255, 255, 0.70)); 
+}
+
+.subtitle {
+    font-size: 20px;
+    opacity: 0;
+    transform: translateX(-100px);
+    animation: geserKanan 0.2s 0.5s cubic-bezier(0.42, 0, 0.58, 1) forwards;
+    transition: all 0.3s;
+}
+
+.subtitle:hover{
+    cursor: pointer;
+    color: rgb(109, 109, 109);
+    filter: 
+    drop-shadow(5px 5px 2px rgba(255, 126, 185, 0.70))
+    drop-shadow(-5px -5px 2px rgba(123, 250, 255, 0.70))
     drop-shadow(0 0 10px rgba(255, 255, 255, 0.70)); 
 }
 
@@ -423,7 +459,7 @@ body, html {
     margin-top: 90px;
     display: flex;
     flex-direction: row;
-    gap: 50px;
+    gap: 70px;
     opacity: 0;
     transform: translateY(50px);
     transition: all 0.3s;
@@ -432,14 +468,18 @@ body, html {
 .carousel-btn {
     background: none;
     color: white;
-    font-size: 30px;
+    font-size: 50px;
     border: none;
     cursor: pointer;
-    transition: all 0.3s ease-in;
+    transition: all 0.3s;
 }
 
 .carousel-btn:hover {
-    transform: scale(1.5);
+    transform: scale(1.05);
+    filter: 
+    drop-shadow(2px 2px 1px rgba(255, 126, 185, 0.70))
+    drop-shadow(-2px -2px 1px rgba(123, 250, 255, 0.70))
+    drop-shadow(0 0 10px rgba(255, 255, 255, 0.70));
 }
 
 .content-tulisan.muncul,.geser.muncul {
